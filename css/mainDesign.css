@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 22, 2018, 5:58:58 PM
+    Author     : Thomas Baldwin
+*/
+
+body
+{
+    background-color: #e2e2e2;
+}
+
+h1
+{
+    color: #605f5e;
+    text-align: center;
+}
+
+.subhead
+{
+    color: #605f5e;
+    text-align: center;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+main
+{
+    width: 80%;
+    min-width: 500px;
+    padding-top: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+header
+{
+    width: 80%;
+    min-width:500px;
+    margin: auto;
+    background-color: #959fa5;
+    border: 1px solid black;
+}
+
+.viewTable
+{
+    margin: auto;
+    border-top: 1px solid #0A2463;
+}
+
+.viewTable th
+{
+   background-color: #247BA0;
+   border: 1px solid #0A2463;
+   text-align: left;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 8px;
+}
+
+.viewTable td
+{
+    background-color: #2a90bb;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.signOutButton
+{
+    display: block;
+    margin: auto;
+}
+
+.employee_form
+{
+    width: 45%;
+    min-width: 200px;
+    margin: auto;
+    margin-top: 5px;
+    padding-top: 12px;
+    border: 1px solid black;
+}
+
+.leftHeader
+{
+    float: left;
+    margin: auto;
+    display: inline-block;
+    margin-left: 45px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.rightHeader
+{
+    float: right;
+    margin: auto;
+    display: inline-block;
+    margin-right: 45px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+
+input[type=text], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formspecial {
+    width: 70%;
+    background-color: 247BA0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formspecial:hover {
+    background-color: #0A2463;
+}
