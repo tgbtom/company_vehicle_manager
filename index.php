@@ -17,6 +17,9 @@
             <h1>Company Vehicle Manager</h1>
         </header>
         <main>
+            <aside>
+             <?php include('view/aside.php'); ?>
+            </aside>
             <h2 class="subhead">Available Vehicles</h2><br>
             <table class="viewTable" name="available_vehicles" cellspacing="0" cellpadding="5">
                 <th>Car #</th>

@@ -18,6 +18,10 @@
             <h1>Company Vehicle Manager</h1>
         </header>
         <main>
+            <aside>
+                <a href="../add_pages/add_vehicle.php">Add New Vehicle</a><br>
+                <a href="../add_pages/add_employee.php">Add New Employee</a>
+            </aside>
             <h2 class="subhead">Vehicle Details</h2>
             <table class="viewTable" cellspacing="0">
                 <th>Vehicle Number: <?php echo $current_vehicle->getVehicleNum(); ?></th>
