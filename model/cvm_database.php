@@ -60,10 +60,33 @@ class Vehicle
     
     public function getOdo()
     {return $this->odo;}
+    
+    public function getOdoFormat ()
+    {
+        return number_format($this->odo);
+    }
 }
 
 class VehicleDB
 {
+    public static function addNewVehicle($vehicle_num, $make, $model, $year, $colour, $plate, $odometer)
+    {
+        $dbCon = Database::getDB();
+        $query = "INSERT INTO cvm_vehicles (vehicle_num, make, model, year, colour, plate, odometer) VALUES " . 
+                "(:vehicle_num, :make, :model, :year, :colour, :plate, :odometer)";
+        $statement = $dbCon->prepare($query);
+        $statement->bindValue(':vehicle_num', $vehicle_num);
+        $statement->bindValue(':make', $make);
+        $statement->bindValue(':model', $model);
+        $statement->bindValue(':year', $year);
+        $statement->bindValue(':colour', $colour);
+        $statement->bindValue(':plate', $plate);
+        $statement->bindValue(':odometer', $odometer);
+        
+        $statement->execute();
+        $statement->closeCursor();
+    }
+    
     public function getVehicles()
     {
         $dbCon = Database::getDB();
@@ -129,6 +152,30 @@ class VehicleDB
 
 class EmployeeDB
 {
+    public static function addNewEmployee($first_name, $last_name)
+    {
+        $dbCon = Database::getDB();
+        $query = "INSERT INTO cvm_employees (first_name, last_name) VALUES" . 
+                "(:first_name, :last_name)";
+        $statement = $dbCon->prepare($query);
+        $statement->bindValue(':first_name', $first_name);
+        $statement->bindValue(':last_name', $last_name);
+        $statement->execute();
+        $statement->closeCursor();
+    }
+    
+    public static function getEmployees()
+    {
+        $dbCon = Database::getDb();
+        $query = "SELECT * FROM cvm_employees";
+        $statement = $dbCon->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        $statement->closeCursor();
+
+        return $result;
+    }
+    
     public static function doesEmployeeExist($first_name, $last_name)
     {
         $dbCon = Database::getDB();

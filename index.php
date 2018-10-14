@@ -11,15 +11,9 @@
         ?>
     </head>
     <body>
-        <header>
-            <img src="image/vehicle2.jpg" height="80" width="120" class="rightHeader">
-            <img src="image/vehicle1.jpg" height="80" width="120" class="leftHeader">
-            <h1>Company Vehicle Manager</h1>
-        </header>
+        <?php include('view/header.php'); ?>
         <main>
-            <aside>
-             <?php include('view/aside.php'); ?>
-            </aside>
+            <?php include('view/aside.php'); ?>
             <h2 class="subhead">Available Vehicles</h2><br>
             <table class="viewTable" name="available_vehicles" cellspacing="0" cellpadding="5">
                 <th>Car #</th>
@@ -48,7 +42,7 @@
                 <td><?php echo $current_vehicle->getYear(); ?></td>
                 <td><?php echo $current_vehicle->getColour(); ?></td>
                 <td><?php echo $current_vehicle->getPlate(); ?></td>
-                <td><?php echo $current_vehicle->getOdo(); ?></td>
+                <td><?php echo $current_vehicle->getOdoFormat(); ?></td>
                 <td><form action ="<?php echo $sign_out_link; ?>" method="post"><input type="submit" value="Sign-Out" class="signOutButton"></input></form></td>
                 </tr>
                 <?php } endforeach;?>
@@ -56,6 +50,7 @@
             <h2 class="subhead">Signed-Out Vehicles</h2><br>
             <table class="viewTable" cellspacing="0" cellpadding="5">
                 <th>Car #</th>
+                <th>Car Details</th>
                 <th>Signed Out By</th>
                 <th>Sign Out Date</th>
                 <th>Odometer (km)</th>
@@ -69,13 +64,14 @@
                 ?>
                 <tr>
                 <td><?php echo $current_vehicle->getVehicleNum(); ?></td>
+                <td><?php echo $current_vehicle->getYear() . " " . $current_vehicle->getMake() . " " . $current_vehicle->getModel(); ?></td>
                 <td><?php echo $signOutDetails[1] . " " . $signOutDetails[2]; ?></td>
                 <td><?php echo $signOutDetails[0]; ?></td>
-                <td><?php echo $current_vehicle->getOdo(); ?></td>
+                <td><?php echo $current_vehicle->getOdoFormat(); ?></td>
                 <td><form action="<?php echo $return_link; ?>" method="post"><input type="submit" value="Return Vehicle" class="signOutButton"></input></form></td>
                 </tr>
                 <?php } endforeach; ?>
-            </table>
+            </table>            
         </main>
     </body>
 </html>

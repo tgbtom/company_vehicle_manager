@@ -11,16 +11,23 @@
         ?>
     </head>
     <body> 
-        <header>
-            <img src="../image/vehicle2.jpg" height="80" width="120" class="rightHeader">
-            <img src="../image/vehicle1.jpg" height="80" width="120" class="leftHeader">
-            <h1>Company Vehicle Manager</h1>
-        </header>
+        <?php include('../view/header.php'); ?>
         <main>
-            <aside>
-                <a href="../add_pages/add_vehicle.php">Add New Vehicle</a><br>
-                <a href="../add_pages/add_employee.php">Add New Employee</a>
-            </aside>
+            <div class="rightAside">
+                <h4 class="subhead">Employees</h4>
+               <?php 
+                    $employees = EmployeeDB::getEmployees();
+                        $firstName  = array_column($employees, 'first_name');
+                        $lastName = array_column($employees, 'last_name');
+                    array_multisort($lastName, SORT_NATURAL, $firstName, SORT_NATURAL, $employees);
+                    foreach ($employees as $employee)
+                    {
+                        echo "<li>" . $employee['first_name'] . " " . $employee['last_name'] . "</li>";
+                    }
+               ?> 
+            </div>
+            <?php include('../view/aside.php'); ?>
+            <div class='employee_form'>
             <h2 class="subhead">Vehicle Details</h2>
             <table class="viewTable" cellspacing="0">
                 <th>Vehicle Number: <?php echo $current_vehicle->getVehicleNum(); ?></th>
@@ -38,6 +45,7 @@
                 
                 <input type="submit" value="Sign-Out" class="formspecial"></input>
             </form>
+            </div>
             </div>
         </main>
     </body>

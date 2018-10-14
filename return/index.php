@@ -12,16 +12,10 @@
         ?>
     </head>
     <body> 
-        <header>
-            <img src="../image/vehicle2.jpg" height="80" width="120" class="rightHeader">
-            <img src="../image/vehicle1.jpg" height="80" width="120" class="leftHeader">
-            <h1>Company Vehicle Manager</h1>
-        </header>
+        <?php include('../view/header.php'); ?>
         <main>
-            <aside>
-                <a href="../add_pages/add_vehicle.php">Add New Vehicle</a><br>
-                <a href="../add_pages/add_employee.php">Add New Employee</a>
-            </aside>
+            <?php include('../view/aside.php'); ?>
+            <div class='employee_form'>
             <h2 class="subhead">Vehicle Details</h2>
             <table class="viewTable" cellspacing="0">
                 <th>Vehicle Number: <?php echo $current_vehicle->getVehicleNum(); ?></th>
@@ -41,6 +35,7 @@
                 
                 <input type="submit" value="Return Vehicle" class="formspecial"></input>
             </form>
+            </div>
             </div>
         </main>
     </body>

@@ -10,11 +10,24 @@ and open the template in the editor.
 aside 
 {
     float: left;
-    border: 1px solid black;
-    margin-top: 25px;
+    min-height: inherit;
+    margin-top: -15px;
+    padding-top: 25px;
     width: 25%;
-    min-width: 100px;
+    min-width: 50px;
 }
+
+main
+{
+    width: 80%;
+    min-width: 726px;
+    min-height: 500px;
+    padding-top: 15px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+}
+
 body
 {
     background-color: #e2e2e2;
@@ -34,19 +47,10 @@ h1
     text-decoration: underline;
 }
 
-main
-{
-    width: 80%;
-    min-width: 500px;
-    padding-top: 15px;
-    margin: auto;
-    text-align: center;
-}
-
 header
 {
     width: 80%;
-    min-width:500px;
+    min-width:710px;
     margin: auto;
     background-color: #959fa5;
     border: 1px solid black;
@@ -86,11 +90,13 @@ header
 
 .employee_form
 {
-    width: 45%;
+    width: 50%;
     min-width: 200px;
     margin: auto;
     margin-top: 5px;
     padding-top: 12px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
     border: 1px solid black;
 }
 
@@ -125,6 +131,16 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+input[type=number], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 .formspecial {
     width: 70%;
     background-color: 247BA0;
@@ -138,4 +154,10 @@ input[type=text], select {
 
 .formspecial:hover {
     background-color: #0A2463;
+}
+
+.rightAside
+{
+    float: right;
+    margin-right: 5%;
 }
